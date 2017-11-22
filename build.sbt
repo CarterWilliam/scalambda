@@ -1,6 +1,6 @@
 val Organisation = "bbc.rms"
 val Name = "scalambda"
-val Version = "0.0.2"
+val Version = "0.0.4"
 
 val ScalaVersion = "2.12.4"
 val Specs2Version = "3.6.5"
@@ -18,7 +18,10 @@ lazy val applicationSettings = Seq(
 )
 
 lazy val dependencies = Seq(
-  "io.github.mkotsur" %% "aws-lambda-scala" % "0.0.8-SNAPSHOT"
+  "com.amazonaws"           % "aws-lambda-java-core"    % "1.1.0",
+  "org.json4s"              %% "json4s-jackson"         % "3.5.0",
+  "org.specs2"              %% "specs2-core" % "4.0.0"  % "test",
+  "org.specs2"              %% "specs2-mock" % "4.0.0"  % "test"
 )
 
 lazy val `scalambda`: Project = project.in(file("."))
